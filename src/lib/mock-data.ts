@@ -1,109 +1,74 @@
-export const mockData = {
-  id: 'root',
-  name: 'My Drive',
-  type: 'folder' as const,
-  items: [
-    {
-      id: 'folder-1',
-      name: 'Projects',
-      type: 'folder' as const,
-      modified: 'yesterday',
-      items: [
-        {
-          id: 'file-1',
-          name: 'Project Proposal.pdf',
-          type: 'file' as const,
-          url: 'https://example.com/project-proposal.pdf',
-          modified: '2 hours ago',
-        },
-        {
-          id: 'file-2',
-          name: 'Budget Spreadsheet.xlsx',
-          type: 'file' as const,
-          url: 'https://example.com/budget.xlsx',
-          modified: '1 day ago',
-        },
-        {
-          id: 'subfolder-1',
-          name: 'Q4 Planning',
-          type: 'folder' as const,
-          modified: '3 days ago',
-          items: [
-            {
-              id: 'file-3',
-              name: 'Timeline.pdf',
-              type: 'file' as const,
-              url: 'https://example.com/timeline.pdf',
-              modified: '2 days ago',
-            },
-            {
-              id: 'file-4',
-              name: 'Resources.xlsx',
-              type: 'file' as const,
-              url: 'https://example.com/resources.xlsx',
-              modified: '3 days ago',
-            },
-          ],
-        },
-      ],
-    },
-    {
-      id: 'folder-2',
-      name: 'Team Documents',
-      type: 'folder' as const,
-      modified: '2 days ago',
-      items: [
-        {
-          id: 'file-5',
-          name: 'Meeting Notes.pdf',
-          type: 'file' as const,
-          url: 'https://example.com/meeting-notes.pdf',
-          modified: '1 hour ago',
-        },
-        {
-          id: 'file-6',
-          name: 'Team Goals.xlsx',
-          type: 'file' as const,
-          url: 'https://example.com/team-goals.xlsx',
-          modified: '5 days ago',
-        },
-      ],
-    },
-    {
-      id: 'file-7',
-      name: 'Annual Report.pdf',
-      type: 'file' as const,
-      url: 'https://example.com/annual-report.pdf',
-      modified: '1 week ago',
-    },
-    {
-      id: 'folder-3',
-      name: 'Design Assets',
-      type: 'folder' as const,
-      modified: '3 days ago',
-      items: [
-        {
-          id: 'file-8',
-          name: 'Logo Design.png',
-          type: 'file' as const,
-          url: 'https://example.com/logo.png',
-          modified: '1 week ago',
-        },
-        {
-          id: 'file-9',
-          name: 'Mockup.jpg',
-          type: 'file' as const,
-          url: 'https://example.com/mockup.jpg',
-          modified: '2 weeks ago',
-        },
-      ],
-    },
-    {
-      id: 'file-10',
-      name: 'Presentation.pdf',
-      type: 'file' as const,
-      url: 'https://example.com/presentation.pdf',
-      modified: '3 days ago',
-    },
-  ],
+export interface File {
+  id: string;
+  name: string;
+  type: "file";
+  url: string;
+  parent: string;
+  size: string;
 }
+
+export type Folder = {
+  id: string;
+  name: string;
+  type: "folder";
+  parent: string | null;
+};
+
+export const mockFolders: Folder[] = [
+  { id: "root", name: "root", type: "folder", parent: null },
+  { id: "1", name: "Documents", type: "folder", parent: "root" },
+  { id: "2", name: "Images", type: "folder", parent: "root" },
+  { id: "3", name: "Work", type: "folder", parent: "root" },
+  { id: "4", name: "Presentations", type: "folder", parent: "3" },
+];
+
+export const mockFiles: File[] = [
+  {
+    id: "4",
+    name: "Resume.pdf",
+    type: "file",
+    url: "/files/resume.pdf",
+    parent: "root",
+    size: "1.2 MB",
+  },
+  {
+    id: "5",
+    name: "Project Proposal.docx",
+    type: "file",
+    url: "/files/proposal.docx",
+    parent: "1",
+    size: "2.5 MB",
+  },
+  {
+    id: "6",
+    name: "Vacation.jpg",
+    type: "file",
+    url: "/files/vacation.jpg",
+    parent: "2",
+    size: "3.7 MB",
+  },
+  {
+    id: "7",
+    name: "Profile Picture.png",
+    type: "file",
+    url: "/files/profile.png",
+    parent: "2",
+    size: "1.8 MB",
+  },
+  {
+    id: "9",
+    name: "Q4 Report.pptx",
+    type: "file",
+    url: "/files/q4-report.pptx",
+    parent: "8",
+    size: "5.2 MB",
+  },
+  {
+    id: "10",
+    name: "Budget.xlsx",
+    type: "file",
+    url: "/files/budget.xlsx",
+    parent: "3",
+    size: "1.5 MB",
+  },
+];
