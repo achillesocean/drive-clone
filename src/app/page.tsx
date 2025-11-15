@@ -1,9 +1,14 @@
-import Link from "next/link";
+'use client'
 
-export default function HomePage() {
+import { useState } from 'react'
+import { Button } from '~/components/ui/button'
+import { Card } from '~/components/ui/card'
+import FileExplorer from '~/components/file-explorer'
+
+export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c] text-white">
-      {"Sup bitches!"}
+    <main className="min-h-screen bg-background">
+      <FileExplorer />
     </main>
-  );
+  )
 }
