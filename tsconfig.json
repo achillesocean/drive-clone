@@ -10,6 +10,8 @@
     "isolatedModules": true,
     "verbatimModuleSyntax": true,
 
+    "typeRoots": ["./node_modules/@types", "./node_modules/@t3-oss/types"],
+
     /* Strictness */
     "strict": true,
     "noUncheckedIndexedAccess": true,
