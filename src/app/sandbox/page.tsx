@@ -5,6 +5,7 @@ import { files, folders } from "~/server/db/schema";
 export default function SandboxPage() {
   return (
     <form
+      className="flex items-center justify-center min-h-screen"
       action={async () => {
         "use server";
 
@@ -26,6 +27,8 @@ export default function SandboxPage() {
           }))
         );
       }}
-    ></form>
+    >
+      <button type="submit">Seed</button>
+    </form>
   );
 }
