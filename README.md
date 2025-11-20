@@ -14,4 +14,6 @@
 - [x] Upload files to the right folder
 - [] Delete files button
 - [x] Allow files that aren't images to be uploaded
-- [] Real homepage
+- [] Real homepage + onboarding (won't have root folder during onboarding. handle that.)
+- [] Add deletion
+- [x] Make sure sort order is consistent
