@@ -15,5 +15,8 @@
 - [] Delete files button
 - [x] Allow files that aren't images to be uploaded
 - [] Real homepage + onboarding (won't have root folder during onboarding. handle that.)
-- [] Add deletion
+- [x] Add deletion
 - [x] Make sure sort order is consistent
+- [] Include fileKey in schema -- then migrate instead of overriding
+  -- But fileKey comes from uploadthing, not singlestore db. so how do we get them into singlestore?
+- [] Add deletions to folders too
