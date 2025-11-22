@@ -17,6 +17,8 @@
 - [] Real homepage + onboarding (won't have root folder during onboarding. handle that.)
 - [x] Add deletion
 - [x] Make sure sort order is consistent
+- [] Allow onboarding root folder creation
 - [] Include fileKey in schema -- then migrate instead of overriding
   -- But fileKey comes from uploadthing, not singlestore db. so how do we get them into singlestore?
 - [] Add deletions to folders too
+- [] When onboarding root folder creating, check if user isn't already onboarded, and root doesn't already exist; also should be done in a transaction.
